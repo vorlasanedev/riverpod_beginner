@@ -1,6 +1,17 @@
 # riverpod_beginner
-
 A new Flutter project with Riverpod State Management.
+
+## Vscode extension
+1. blockman
+2. flutter snippets
+3. codeium (ai code), copilot
+4. dart data class generator
+5. flutter & Dart Utilities
+6. flutter riverpod snippets
+7. flutter widget snippets
+8. material icon theme
+9. error lens
+
 <!-- installation -->
 ## Create flutter project with command
 ```
@@ -13,14 +24,22 @@ flutter_riverpod: ^2.6.1
 ```
 <!-- Flutter freezed Package -->
 ## Freezed package
-https://pub.dev/packages/freeze/install
+https://pub.dev/packages/freezed
+
 ```
-flutter pub add freeze
+flutter pub add freezed_annotation
+flutter pub add dev:build_runner
+flutter pub add dev:freezed
+flutter pub add json_annotation
+flutter pub add dev:json_serializable
 ```
+when finish create model run
 ```
-dependencies:
-  freeze: ^1.0.0
+flutter pub run build_runner build -d
 ```
+Regenerate (clear stale outputs)
 ```
-import 'package:freeze/freeze.dart';
+flutter pub get
+dart run build_runner clean
+dart run build_runner build --delete-conflicting-outputs
 ```
