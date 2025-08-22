@@ -54,6 +54,7 @@ class _CounterAsyncScreenState extends ConsumerState<CounterAsyncScreen> {
         mainAxisSize: MainAxisSize.min,
         children: [
           FloatingActionButton(
+            heroTag: 'fab_decrement',
             onPressed: (){
               setState(() {
                 // ref.read(counterStateProvider.notifier).state++;
@@ -65,6 +66,7 @@ class _CounterAsyncScreenState extends ConsumerState<CounterAsyncScreen> {
             ),
             const SizedBox(width: 10,),
             FloatingActionButton(
+            heroTag: 'fab_increment',
             onPressed: (){
               setState(() {
                 // ref.read(counterStateProvider.notifier).state--;
@@ -76,7 +78,7 @@ class _CounterAsyncScreenState extends ConsumerState<CounterAsyncScreen> {
             ),
             const SizedBox(width: 10,),
             FloatingActionButton(
-              heroTag: null, 
+            heroTag: 'fab_reset', 
             onPressed: (){
               setState(() {
                 // ref.read(counterStateProvider.notifier).state--;

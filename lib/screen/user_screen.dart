@@ -15,8 +15,8 @@ class _UserScreenState extends ConsumerState<UserScreen> {
 
   @override
   void dispose(){
-    _userController.dispose();
     super.dispose();
+    _userController.dispose();
     debugPrint('user screen dispose');
   }
 
