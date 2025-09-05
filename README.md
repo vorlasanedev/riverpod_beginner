@@ -12,6 +12,11 @@ A new Flutter project with Riverpod State Management.
 8. material icon theme
 9. error lens
 
+## setup vscode run android emulator
+- install: android ios emulator
+- setting run emulator path
+C:\Users\vorla\AppData\Local\Android\Sdk\emulator
+<img src="screenshot/vscode_emulator.png"/>
 <!-- installation -->
 ## Create flutter project with command
 ```
@@ -33,7 +38,8 @@ flutter pub add dev:freezed
 flutter pub add json_annotation
 flutter pub add dev:json_serializable
 ```
-when finish create model run
+create model user.dart
+<img src="screenshot/freeze_custom_state.png"/>
 ```
 flutter pub run build_runner build -d
 ```
