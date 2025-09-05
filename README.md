@@ -18,12 +18,15 @@ A new Flutter project with Riverpod State Management.
 C:\Users\vorla\AppData\Local\Android\Sdk\emulator
 <img src="screenshot/vscode_emulator.png"/>
 <!-- installation -->
+
 ## Create flutter project with command
+
 ```
-fluttercreate -e <app name>
+flutter create -e <app name>
 ```
 ## Flutter Riverpod State Management package
 https://pub.dev/packages/flutter_riverpod/install
+
 ```
 flutter_riverpod: ^2.6.1
 ```
@@ -38,7 +41,7 @@ flutter pub add dev:freezed
 flutter pub add json_annotation
 flutter pub add dev:json_serializable
 ```
-create model user.dart
+## create model user.dart
 <img src="screenshot/freeze_custom_state.png"/>
 ```
 flutter pub run build_runner build -d
