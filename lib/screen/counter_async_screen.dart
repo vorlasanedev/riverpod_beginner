@@ -9,12 +9,11 @@ class CounterAsyncScreen extends ConsumerStatefulWidget {
   const CounterAsyncScreen({super.key});
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() => _CounterAsyncScreenState();
+  ConsumerState<ConsumerStatefulWidget> createState() =>
+      _CounterAsyncScreenState();
 }
 
 class _CounterAsyncScreenState extends ConsumerState<CounterAsyncScreen> {
-
-
   @override
   Widget build(BuildContext context) {
     final counterAsync = ref.watch(counterAsyncNotifierProvider);
@@ -22,7 +21,7 @@ class _CounterAsyncScreenState extends ConsumerState<CounterAsyncScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('counter'),
+        title: const Text('Counter Async'),
         actions: [
           IconButton(
             icon: const Icon(Icons.person_add),
@@ -35,59 +34,55 @@ class _CounterAsyncScreenState extends ConsumerState<CounterAsyncScreen> {
             },
           ),
         ],
-        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
             counterAsync.when(
-              data: (data) => Text('You have pushed the button this many times: $data'),
+              data: (data) => Text('You have to push many time: $data'),
               error: (error, stackTrace) => Text('$error'),
-              loading:() => const CircularProgressIndicator(),
-            )
+              loading: () => const CircularProgressIndicator(),
+            ),
           ],
         ),
       ),
 
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
         children: [
           FloatingActionButton(
-            heroTag: 'fab_decrement',
-            onPressed: (){
+            heroTag: 'fab_decreasement',
+            onPressed: () {
               setState(() {
-                // ref.read(counterStateProvider.notifier).state++;
                 ref.read(counterAsyncNotifierProvider.notifier).decrement();
               });
             },
             tooltip: 'Decreasement',
             child: const Icon(Icons.minimize),
-            ),
-            const SizedBox(width: 10,),
-            FloatingActionButton(
+          ),
+          const SizedBox(width: 10),
+          FloatingActionButton(
             heroTag: 'fab_increment',
-            onPressed: (){
+            onPressed: () {
               setState(() {
-                // ref.read(counterStateProvider.notifier).state--;
                 ref.read(counterAsyncNotifierProvider.notifier).increment();
               });
             },
             tooltip: 'Increasement',
             child: const Icon(Icons.add),
-            ),
-            const SizedBox(width: 10,),
-            FloatingActionButton(
-            heroTag: 'fab_reset', 
-            onPressed: (){
+          ),
+          const SizedBox(width: 10),
+          FloatingActionButton(
+            heroTag: 'fab_reset',
+            onPressed: () {
               setState(() {
-                // ref.read(counterStateProvider.notifier).state--;
                 ref.read(counterAsyncNotifierProvider.notifier).reset();
               });
             },
             tooltip: 'Reset',
             child: const Icon(Icons.restore),
-            ),
+          ),
         ],
       ),
     );

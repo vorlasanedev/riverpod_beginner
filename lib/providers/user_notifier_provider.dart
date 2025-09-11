@@ -5,27 +5,30 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // final userNotifierProvider = NotifierProvider<UserNotifier, String>(UserNotifier.new);
-final userNotifierProvider = AutoDisposeNotifierProvider<UserNotifier, String>(UserNotifier.new);
+final userNotifierProvider = AutoDisposeNotifierProvider<UserNotifier, String>(
+  UserNotifier.new,
+);
 
-class UserNotifier extends AutoDisposeNotifier<String>{
+class UserNotifier extends AutoDisposeNotifier<String> {
   @override
   String build() {
     final keepAlive = ref.keepAlive();
     Timer? timer;
 
-    ref.onDispose((){
+    ref.onDispose(() {
       debugPrint('User Notifier Dispose');
       timer?.cancel();
     });
-    ref.onCancel((){
+
+    ref.onCancel(() {
       debugPrint('User Notifier Cancel is called');
-      timer = Timer(const Duration(seconds: 10), (){
-          keepAlive.close();
-          debugPrint('User Notifier onCancel');
-        });
+      timer = Timer(const Duration(seconds: 10), () {
+        keepAlive.close();
+        debugPrint('User Notifier onCancel');
+      });
     });
 
-    ref.onResume((){
+    ref.onResume(() {
       debugPrint('User Notifier onResume is called');
       timer?.cancel();
     });
@@ -33,9 +36,7 @@ class UserNotifier extends AutoDisposeNotifier<String>{
     return '-';
   }
 
-  void update(String value){
+  void update(String value) {
     state = value;
   }
-
-
 }
