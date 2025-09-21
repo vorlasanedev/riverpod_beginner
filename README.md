@@ -23,6 +23,8 @@ C:\Users\vorla\AppData\Local\Android\Sdk\emulator
 
 ```
 flutter create -e <app name>
+flutter create -e supabase_powersync_chat --org=com.ifundev
+
 ```
 ## Flutter Riverpod State Management package
 https://pub.dev/packages/flutter_riverpod/install

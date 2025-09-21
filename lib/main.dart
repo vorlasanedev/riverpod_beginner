@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_beginner/screen/counter_async_screen.dart';
+// import 'package:riverpod_beginner/screen/counter_async_screen.dart';
+import 'package:riverpod_beginner/screen/user_list_screen.dart';
 // import 'package:riverpod_beginner/screen/counter_screen.dart';
 // import 'package:riverpod_beginner/screen/counter_screen.dart';
 
@@ -18,7 +19,7 @@ class MainApp extends StatelessWidget {
       home: Scaffold(
         body: Center(
           // child: CounterScreen(),
-          child: CounterAsyncScreen(),
+          child: UserListScreen(),
         ),
       ),
     );

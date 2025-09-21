@@ -6,8 +6,9 @@ part 'user_state.freezed.dart';
 @freezed
 class UserState with _$UserState {
   const factory UserState({
-    @Default(false) bool isLoading,
-    String? error,
     @Default([]) List<User> users,
+    @Default(false) bool isLoading,
+    @Default(false) bool isAdded,
+    String? error,
   }) = _UserState;
 }
